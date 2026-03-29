@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark" />
   <title>Tallico | Tech Operations for Modern Business</title>
-  <meta name="description" content="Tallico is a tech operations consultancy helping businesses grow through Odoo ERP, data intelligence, and modern web systems." />
+  <meta name="description"
+    content="Tallico is a tech operations consultancy helping businesses grow through Odoo ERP, data intelligence, and modern web systems." />
   <meta name="robots" content="index, follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg: #090909;
       --surface: #101010;
       --surface2: #161616;
-      --border: rgba(255,255,255,0.07);
-      --border-hover: rgba(255,255,255,0.16);
+      --border: rgba(255, 255, 255, 0.07);
+      --border-hover: rgba(255, 255, 255, 0.16);
       --text: #f0ede8;
       --text-muted: #888;
       --text-dim: #444;
       --accent: #c8f060;
-      --accent-dim: rgba(200,240,96,0.10);
-      --accent-border: rgba(200,240,96,0.18);
+      --accent-dim: rgba(200, 240, 96, 0.10);
+      --accent-border: rgba(200, 240, 96, 0.18);
       --radius: 16px;
     }
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; background: #090909; }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: #090909;
+    }
+
     body {
       font-family: 'DM Sans', sans-serif;
       background: #090909;
@@ -34,213 +50,697 @@
       overflow-x: hidden;
       color-scheme: dark;
     }
+
     body::after {
       content: '';
-      position: fixed; inset: 0;
+      position: fixed;
+      inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 9999;
+      pointer-events: none;
+      z-index: 9999;
     }
-    h1, h2, h3, h4, .logo-text { font-family: 'Syne', sans-serif; }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    .logo-text {
+      font-family: 'Syne', sans-serif;
+    }
 
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
       height: 68px;
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 0 60px;
-      background: rgba(9,9,9,0.85);
+      background: rgba(9, 9, 9, 0.85);
       backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
       transition: border-color 0.3s;
     }
-    .logo-text { font-size: 20px; font-weight: 800; color: #f0ede8; text-decoration: none; letter-spacing: -0.5px; }
-    .logo-text span { color: #c8f060; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: #888; text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: #f0ede8; }
-    .nav-cta {
-      background: #c8f060; color: #090909;
-      font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700;
-      padding: 9px 20px; border-radius: 8px; text-decoration: none; transition: opacity 0.2s;
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: 800;
+      color: #f0ede8;
+      text-decoration: none;
+      letter-spacing: -0.5px;
     }
-    .nav-cta:hover { opacity: 0.85; }
+
+    .logo-text span {
+      color: #c8f060;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #888;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #f0ede8;
+    }
+
+    .nav-cta {
+      background: #c8f060;
+      color: #090909;
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 9px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .nav-cta:hover {
+      opacity: 0.85;
+    }
 
     .hero {
       min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       padding: 140px 60px 100px;
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
     }
+
     .hero::before {
       content: '';
-      position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
       background-size: 72px 72px;
       mask-image: radial-gradient(ellipse 90% 90% at 50% 40%, black 20%, transparent 80%);
       pointer-events: none;
     }
+
     .hero-glow {
-      position: absolute; width: 800px; height: 800px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(200,240,96,0.07) 0%, transparent 65%);
-      top: -200px; right: -250px; pointer-events: none;
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200, 240, 96, 0.07) 0%, transparent 65%);
+      top: -200px;
+      right: -250px;
+      pointer-events: none;
     }
+
     .hero-pill {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(200,240,96,0.10); border: 1px solid rgba(200,240,96,0.18);
-      color: #c8f060; font-size: 11px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
-      padding: 6px 14px; border-radius: 100px; margin-bottom: 36px; width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200, 240, 96, 0.10);
+      border: 1px solid rgba(200, 240, 96, 0.18);
+      color: #c8f060;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 36px;
+      width: fit-content;
       animation: fadeUp 0.7s ease both;
     }
-    .hero-pill-dot { width: 6px; height: 6px; border-radius: 50%; background: #c8f060; animation: blink 2s ease infinite; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .hero-pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #c8f060;
+      animation: blink 2s ease infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0.3
+      }
+    }
+
     .hero h1 {
-      font-size: clamp(52px, 7.5vw, 96px); font-weight: 800; line-height: 1.0;
-      letter-spacing: -3.5px; max-width: 860px; animation: fadeUp 0.7s 0.12s ease both;
+      font-size: clamp(52px, 7.5vw, 96px);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -3.5px;
+      max-width: 860px;
+      animation: fadeUp 0.7s 0.12s ease both;
     }
-    .hero h1 .accent { color: #c8f060; }
+
+    .hero h1 .accent {
+      color: #c8f060;
+    }
+
     .hero-sub {
-      margin-top: 30px; font-size: 18px; font-weight: 300;
-      color: #888; max-width: 520px; line-height: 1.75; animation: fadeUp 0.7s 0.24s ease both;
+      margin-top: 30px;
+      font-size: 18px;
+      font-weight: 300;
+      color: #888;
+      max-width: 520px;
+      line-height: 1.75;
+      animation: fadeUp 0.7s 0.24s ease both;
     }
-    .hero-actions { display: flex; gap: 14px; margin-top: 48px; animation: fadeUp 0.7s 0.36s ease both; }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      margin-top: 48px;
+      animation: fadeUp 0.7s 0.36s ease both;
+    }
+
     .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: #c8f060; color: #090909; font-family: 'Syne', sans-serif;
-      font-size: 15px; font-weight: 700; padding: 14px 28px; border-radius: 10px;
-      text-decoration: none; transition: opacity 0.2s, transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #c8f060;
+      color: #090909;
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
     }
-    .btn-primary:hover { opacity: 0.88; transform: translateY(-2px); }
+
+    .btn-primary:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
+    }
+
     .btn-ghost {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: transparent; color: #888; font-size: 15px; font-weight: 500;
-      padding: 14px 28px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.07);
-      text-decoration: none; transition: border-color 0.2s, color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: #888;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 14px 28px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
     }
-    .btn-ghost:hover { border-color: rgba(255,255,255,0.16); color: #f0ede8; }
+
+    .btn-ghost:hover {
+      border-color: rgba(255, 255, 255, 0.16);
+      color: #f0ede8;
+    }
+
     .hero-divider {
-      margin-top: 80px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.07);
-      display: flex; gap: 60px; animation: fadeUp 0.7s 0.48s ease both;
+      margin-top: 80px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      gap: 60px;
+      animation: fadeUp 0.7s 0.48s ease both;
     }
-    .stat-val { font-family: 'Syne', sans-serif; font-size: 38px; font-weight: 800; letter-spacing: -1.5px; color: #f0ede8; }
-    .stat-val span { color: #c8f060; }
-    .stat-desc { font-size: 13px; color: #888; margin-top: 4px; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+
+    .stat-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      color: #f0ede8;
+    }
+
+    .stat-val span {
+      color: #c8f060;
+    }
+
+    .stat-desc {
+      font-size: 13px;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     .marquee-bar {
-      background: #101010; border-top: 1px solid rgba(255,255,255,0.07);
-      border-bottom: 1px solid rgba(255,255,255,0.07); padding: 18px 0; overflow: hidden;
+      background: #101010;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 18px 0;
+      overflow: hidden;
     }
-    .marquee-track { display: flex; animation: marquee 28s linear infinite; white-space: nowrap; }
+
+    .marquee-track {
+      display: flex;
+      animation: marquee 28s linear infinite;
+      white-space: nowrap;
+    }
+
     .marquee-item {
-      display: inline-flex; align-items: center; gap: 24px;
-      font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700;
-      letter-spacing: 1px; text-transform: uppercase; color: #444; padding: 0 40px; flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 24px;
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #444;
+      padding: 0 40px;
+      flex-shrink: 0;
     }
-    .marquee-item .dot { width: 4px; height: 4px; border-radius: 50%; background: #c8f060; }
-    @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-    section { padding: 110px 60px; }
-    .sec-tag { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #c8f060; margin-bottom: 16px; }
-    .sec-title { font-size: clamp(32px, 4vw, 54px); font-weight: 800; letter-spacing: -2px; line-height: 1.05; margin-bottom: 20px; }
-    .sec-desc { font-size: 17px; color: #888; max-width: 500px; font-weight: 300; line-height: 1.78; }
+    .marquee-item .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #c8f060;
+    }
 
-    .services { background: #090909; }
-    .services-head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 64px; }
+    @keyframes marquee {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    section {
+      padding: 110px 60px;
+    }
+
+    .sec-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #c8f060;
+      margin-bottom: 16px;
+    }
+
+    .sec-title {
+      font-size: clamp(32px, 4vw, 54px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .sec-desc {
+      font-size: 17px;
+      color: #888;
+      max-width: 500px;
+      font-weight: 300;
+      line-height: 1.78;
+    }
+
+    .services {
+      background: #090909;
+    }
+
+    .services-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+
     .pillar-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr);
-      gap: 1px; background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; overflow: hidden;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
+      overflow: hidden;
     }
+
     .pillar {
-      background: #101010; padding: 52px 40px;
-      position: relative; overflow: hidden; transition: background 0.3s; cursor: default;
+      background: #101010;
+      padding: 52px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+      cursor: default;
     }
+
     .pillar::after {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
       background: linear-gradient(90deg, #c8f060, transparent);
-      transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
     }
-    .pillar:hover::after { transform: scaleX(1); }
-    .pillar:hover { background: #161616; }
-    .pillar-num { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #444; margin-bottom: 36px; }
+
+    .pillar:hover::after {
+      transform: scaleX(1);
+    }
+
+    .pillar:hover {
+      background: #161616;
+    }
+
+    .pillar-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #444;
+      margin-bottom: 36px;
+    }
+
     .pillar-icon {
-      width: 50px; height: 50px; border-radius: 13px;
-      background: rgba(200,240,96,0.10); border: 1px solid rgba(200,240,96,0.18);
-      display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 22px;
+      width: 50px;
+      height: 50px;
+      border-radius: 13px;
+      background: rgba(200, 240, 96, 0.10);
+      border: 1px solid rgba(200, 240, 96, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 22px;
     }
-    .pillar h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.6px; margin-bottom: 12px; }
-    .pillar p { font-size: 14px; color: #888; line-height: 1.72; margin-bottom: 28px; }
-    .pillar-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .pillar-list li { font-size: 13px; color: #888; display: flex; align-items: center; gap: 9px; }
-    .pillar-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #c8f060; flex-shrink: 0; }
 
-    .why { background: #101010; border-top: 1px solid rgba(255,255,255,0.07); border-bottom: 1px solid rgba(255,255,255,0.07); }
-    .why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .why-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .pillar h3 {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      margin-bottom: 12px;
+    }
+
+    .pillar p {
+      font-size: 14px;
+      color: #888;
+      line-height: 1.72;
+      margin-bottom: 28px;
+    }
+
+    .pillar-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .pillar-list li {
+      font-size: 13px;
+      color: #888;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .pillar-list li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #c8f060;
+      flex-shrink: 0;
+    }
+
+    .why {
+      background: #101010;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .why-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .why-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
     .why-card {
-      background: #161616; border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 16px; padding: 28px 24px; transition: border-color 0.25s, transform 0.25s;
+      background: #161616;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: border-color 0.25s, transform 0.25s;
     }
-    .why-card:hover { border-color: rgba(255,255,255,0.16); transform: translateY(-4px); }
-    .why-card-icon { font-size: 26px; margin-bottom: 12px; }
-    .why-card h4 { font-size: 15px; font-weight: 700; letter-spacing: -0.3px; margin-bottom: 7px; }
-    .why-card p { font-size: 13px; color: #888; line-height: 1.6; }
 
-    .process { background: #090909; }
+    .why-card:hover {
+      border-color: rgba(255, 255, 255, 0.16);
+      transform: translateY(-4px);
+    }
+
+    .why-card-icon {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+
+    .why-card h4 {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 7px;
+    }
+
+    .why-card p {
+      font-size: 13px;
+      color: #888;
+      line-height: 1.6;
+    }
+
+    .process {
+      background: #090909;
+    }
+
     .process-steps {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 1px; margin-top: 64px; background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; overflow: hidden;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 64px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 20px;
+      overflow: hidden;
     }
-    .step { background: #101010; padding: 40px 32px; transition: background 0.3s; }
-    .step:hover { background: #161616; }
-    .step-num { font-family: 'Syne', sans-serif; font-size: 40px; font-weight: 800; letter-spacing: -2px; color: rgba(200,240,96,0.18); margin-bottom: 20px; line-height: 1; }
-    .step h4 { font-size: 16px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.3px; }
-    .step p { font-size: 13px; color: #888; line-height: 1.65; }
 
-    .contact { background: #101010; border-top: 1px solid rgba(255,255,255,0.07); }
-    .contact-inner { max-width: 780px; margin: 0 auto; text-align: center; }
-    .contact-inner .sec-title { font-size: clamp(36px, 5vw, 64px); }
-    .contact-inner .sec-desc { margin: 0 auto 44px; max-width: 460px; }
-    .contact-email {
-      display: inline-flex; align-items: center; gap: 10px;
-      font-size: 13px; color: #888; margin-top: 28px; text-decoration: none; transition: color 0.2s;
+    .step {
+      background: #101010;
+      padding: 40px 32px;
+      transition: background 0.3s;
     }
-    .contact-email:hover { color: #c8f060; }
+
+    .step:hover {
+      background: #161616;
+    }
+
+    .step-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: -2px;
+      color: rgba(200, 240, 96, 0.18);
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+
+    .step h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .step p {
+      font-size: 13px;
+      color: #888;
+      line-height: 1.65;
+    }
+
+    .contact {
+      background: #101010;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .contact-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-inner .sec-title {
+      font-size: clamp(36px, 5vw, 64px);
+    }
+
+    .contact-inner .sec-desc {
+      margin: 0 auto 44px;
+      max-width: 460px;
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: #888;
+      margin-top: 28px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-email:hover {
+      color: #c8f060;
+    }
 
     footer {
-      padding: 36px 60px; border-top: 1px solid rgba(255,255,255,0.07);
-      display: flex; justify-content: space-between; align-items: center;
+      padding: 36px 60px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .footer-logo { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 800; color: #888; letter-spacing: -0.3px; }
-    .footer-logo span { color: #c8f060; }
-    footer p { font-size: 13px; color: #444; }
 
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      color: #888;
+      letter-spacing: -0.3px;
+    }
+
+    .footer-logo span {
+      color: #c8f060;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: #444;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
 
     @media (max-width: 900px) {
-      nav { padding: 0 24px; }
-      .nav-links { display: none; }
-      .hero { padding: 120px 24px 80px; }
-      .hero h1 { letter-spacing: -2px; }
-      .hero-divider { gap: 32px; flex-wrap: wrap; }
-      section { padding: 80px 24px; }
-      .services-head { grid-template-columns: 1fr; }
-      .pillar-grid { grid-template-columns: 1fr; }
-      .why-inner { grid-template-columns: 1fr; gap: 48px; }
-      .process-steps { grid-template-columns: 1fr 1fr; }
-      footer { flex-direction: column; gap: 12px; text-align: center; }
+      nav {
+        padding: 0 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 120px 24px 80px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-divider {
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+
+      section {
+        padding: 80px 24px;
+      }
+
+      .services-head {
+        grid-template-columns: 1fr;
+      }
+
+      .pillar-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
     }
+
     @media (max-width: 580px) {
-      .why-cards { grid-template-columns: 1fr; }
-      .process-steps { grid-template-columns: 1fr; }
-      .hero-actions { flex-direction: column; }
+      .why-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <nav>
@@ -266,12 +766,16 @@
       Grow with clarity.
     </h1>
     <p class="hero-sub">
-      Tallico helps businesses take control of their operations through Odoo ERP, data intelligence, and modern web systems built for real results.
+      Tallico helps businesses take control of their operations through Odoo ERP, data intelligence, and modern web
+      systems built for real results.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">
         Start a Project
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="#090909" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1 7h12M7 1l6 6-6 6" stroke="#090909" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
       </a>
       <a href="#services" class="btn-ghost">See What We Do</a>
     </div>
@@ -293,24 +797,60 @@
 
   <div class="marquee-bar">
     <div class="marquee-track">
-      <div class="marquee-item"><span>Odoo ERP</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Data Intelligence</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Web Systems</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>AI and Agents</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Process Automation</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Digital Strategy</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Dashboard Analytics</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>LLM Integration</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Technology Advisory</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Odoo ERP</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Data Intelligence</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Web Systems</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>AI and Agents</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Process Automation</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Digital Strategy</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Dashboard Analytics</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>LLM Integration</span><div class="dot"></div></div>
-      <div class="marquee-item"><span>Technology Advisory</span><div class="dot"></div></div>
+      <div class="marquee-item"><span>Odoo ERP</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>Data Intelligence</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>Web Systems</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>AI and Agents</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>Process Automation</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>Digital Strategy</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>Dashboard Analytics</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>LLM Integration</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>Technology Advisory</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>Odoo ERP</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>Data Intelligence</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>Web Systems</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>AI and Agents</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>Process Automation</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>Digital Strategy</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>Dashboard Analytics</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>LLM Integration</span>
+        <div class="dot"></div>
+      </div>
+      <div class="marquee-item"><span>Technology Advisory</span>
+        <div class="dot"></div>
+      </div>
     </div>
   </div>
 
@@ -321,7 +861,8 @@
         <h2 class="sec-title reveal reveal-delay-1">Four pillars.<br>One team.</h2>
       </div>
       <p class="sec-desc reveal reveal-delay-2">
-        We do not do everything. We do four things exceptionally well. Each pillar works as a standalone engagement or as part of a larger transformation.
+        We do not do everything. We do four things exceptionally well. Each pillar works as a standalone engagement or
+        as part of a larger transformation.
       </p>
     </div>
     <div class="pillar-grid">
@@ -329,7 +870,8 @@
         <div class="pillar-num">01</div>
         <div class="pillar-icon">&#9881;&#65039;</div>
         <h3>Odoo ERP</h3>
-        <p>Streamline your entire operation on one platform. From inventory and accounting to HR and CRM, we implement and customise Odoo to fit the way your business actually works.</p>
+        <p>Streamline your entire operation on one platform. From inventory and accounting to HR and CRM, we implement
+          and customise Odoo to fit the way your business actually works.</p>
         <ul class="pillar-list">
           <li>Full Odoo implementation and setup</li>
           <li>Module customisation and integrations</li>
@@ -341,7 +883,8 @@
         <div class="pillar-num">02</div>
         <div class="pillar-icon">&#128202;</div>
         <h3>Data Intelligence</h3>
-        <p>Turn scattered data into decisions. We build live dashboards and reporting systems that give you real visibility into profit margins, performance, and what is actually happening in your business.</p>
+        <p>Turn scattered data into decisions. We build live dashboards and reporting systems that give you real
+          visibility into profit margins, performance, and what is actually happening in your business.</p>
         <ul class="pillar-list">
           <li>Live profit and performance dashboards</li>
           <li>Multi-source data consolidation</li>
@@ -353,7 +896,8 @@
         <div class="pillar-num">03</div>
         <div class="pillar-icon">&#127760;</div>
         <h3>Web and Systems</h3>
-        <p>Your website is your first impression. We build fast, clean, modern web systems from landing pages that convert to internal tools that keep your team moving efficiently.</p>
+        <p>Your website is your first impression. We build fast, clean, modern web systems from landing pages that
+          convert to internal tools that keep your team moving efficiently.</p>
         <ul class="pillar-list">
           <li>High-performance websites and apps</li>
           <li>Internal tools and admin systems</li>
@@ -365,7 +909,8 @@
         <div class="pillar-num">04</div>
         <div class="pillar-icon">&#129302;</div>
         <h3>AI and Agents</h3>
-        <p>Embed intelligence directly into your operations. We design and deploy custom AI agents that handle repetitive decisions, surface insights, and act on your behalf.</p>
+        <p>Embed intelligence directly into your operations. We design and deploy custom AI agents that handle
+          repetitive decisions, surface insights, and act on your behalf.</p>
         <ul class="pillar-list">
           <li>Custom AI agents for business workflows</li>
           <li>LLM-powered tools and internal copilots</li>
@@ -382,14 +927,16 @@
         <div class="sec-tag reveal">Why Tallico</div>
         <h2 class="sec-title reveal reveal-delay-1">No fluff.<br>Just results.</h2>
         <p class="sec-desc reveal reveal-delay-2" style="margin-top: 20px;">
-          We are a lean team of operators, engineers, and strategists. We move fast, communicate clearly, and deliver work that makes an immediate difference.
+          We are a lean team of operators, engineers, and strategists. We move fast, communicate clearly, and deliver
+          work that makes an immediate difference.
         </p>
       </div>
       <div class="why-cards">
         <div class="why-card reveal">
           <div class="why-card-icon">&#9889;</div>
           <h4>Pilot-First Approach</h4>
-          <p>We start with a scoped pilot with real deliverables and a fast timeline, so you see value before committing to anything larger.</p>
+          <p>We start with a scoped pilot with real deliverables and a fast timeline, so you see value before committing
+            to anything larger.</p>
         </div>
         <div class="why-card reveal reveal-delay-1">
           <div class="why-card-icon">&#127919;</div>
@@ -399,12 +946,14 @@
         <div class="why-card reveal reveal-delay-2">
           <div class="why-card-icon">&#129309;</div>
           <h4>Founder-Led</h4>
-          <p>You work directly with us, not account managers. The people you speak to are the people building your solution.</p>
+          <p>You work directly with us, not account managers. The people you speak to are the people building your
+            solution.</p>
         </div>
         <div class="why-card reveal reveal-delay-3">
           <div class="why-card-icon">&#128208;</div>
           <h4>Built to Last</h4>
-          <p>Everything we build is clean, documented, and yours. No vendor lock-in, no black boxes. Just solid systems.</p>
+          <p>Everything we build is clean, documented, and yours. No vendor lock-in, no black boxes. Just solid systems.
+          </p>
         </div>
       </div>
     </div>
@@ -417,7 +966,8 @@
       <div class="step reveal">
         <div class="step-num">01</div>
         <h4>Discovery Call</h4>
-        <p>We get on a call, understand your business, identify the biggest bottleneck, and determine which pillar fits best.</p>
+        <p>We get on a call, understand your business, identify the biggest bottleneck, and determine which pillar fits
+          best.</p>
       </div>
       <div class="step reveal reveal-delay-1">
         <div class="step-num">02</div>
@@ -432,7 +982,8 @@
       <div class="step reveal reveal-delay-3">
         <div class="step-num">04</div>
         <h4>Scale Together</h4>
-        <p>If you love the result, we expand the engagement. If not, you keep everything we built with no strings attached.</p>
+        <p>If you love the result, we expand the engagement. If not, you keep everything we built with no strings
+          attached.</p>
       </div>
     </div>
   </section>
@@ -442,11 +993,15 @@
       <div class="sec-tag reveal" style="text-align:center;">Let's Talk</div>
       <h2 class="sec-title reveal reveal-delay-1">Ready to build<br>something real?</h2>
       <p class="sec-desc reveal reveal-delay-2">
-        Tell us what you are working on. We will be straight with you about whether we are the right fit. If we are, we move fast.
+        Tell us what you are working on. We will be straight with you about whether we are the right fit. If we are, we
+        move fast.
       </p>
       <a href="mailto:contact.tallico@gmail.com" class="btn-primary reveal reveal-delay-3">
         Contact Us
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="#090909" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1 7h12M7 1l6 6-6 6" stroke="#090909" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
       </a>
       <br>
       <a href="mailto:contact.tallico@gmail.com" class="contact-email">
@@ -462,19 +1017,21 @@
   </footer>
 
   <script>
-    var reveals = document.querySelectorAll('.reveal');
-    var io = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
         if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
       });
     }, { threshold: 0.12 });
-    reveals.forEach(function(el) { io.observe(el); });
+    reveals.forEach(el => io.observe(el));
 
-    var nav = document.querySelector('nav');
-    window.addEventListener('scroll', function() {
-      nav.style.borderBottomColor = window.scrollY > 40 ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0.07)';
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.style.borderBottomColor = window.scrollY > 40
+        ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0.07)';
     });
   </script>
 
 </body>
+
 </html>
